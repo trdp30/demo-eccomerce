@@ -1,15 +1,14 @@
 import React from 'react';
 import 'App.css';
-import { CssBaseline, ThemeProvider, Typography } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from 'theme';
+import Home from 'components/home';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Typography variant="h1" color={'primary'}>
-        Root Page application
-      </Typography>
+      <Home />
     </ThemeProvider>
   );
 }
