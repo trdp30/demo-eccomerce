@@ -6,8 +6,10 @@ import createCache from '@emotion/cache';
 
 import theme from 'theme';
 import Home from 'components/pages/home/Home';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Outlet } from 'react-router-dom';
 import Layout from 'components/Layout';
+import Products from 'components/pages/products/Products';
+import ProductDetails from 'components/pages/products/ProductDetails';
 
 const cache = createCache({
   key: 'demo-ecommerce',
@@ -23,6 +25,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
+              <Route path="/product" element={<Outlet />}>
+                <Route index element={<Products />} />
+                <Route path=":id" element={<ProductDetails />} />
+              </Route>
             </Route>
           </Routes>
         </StyledEngineProvider>

@@ -1,4 +1,4 @@
-import { ImageListItem, Stack, Typography, ImageListItemBar, Link } from '@mui/material';
+import { Stack, Typography, Link } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useMemo } from 'react';
 import BoltIcon from '@mui/icons-material/Bolt';
@@ -13,7 +13,7 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/deal-of-the-week-img-1.webp',
-    redirectTo: '/product/type'
+    redirectTo: '/product/1'
   },
   {
     name: 'Smart Watch Black',
@@ -21,7 +21,7 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/deal-of-the-week-img-2.webp',
-    redirectTo: '/product/type'
+    redirectTo: '/product/2'
   },
   {
     name: 'Smart Watch Black',
@@ -29,7 +29,7 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/deal-of-the-week-img-3.webp',
-    redirectTo: '/product/type'
+    redirectTo: '/product/3'
   },
   {
     name: 'Smart Watch Black',
@@ -37,7 +37,7 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/deal-of-the-week-img-4.webp',
-    redirectTo: '/product/type'
+    redirectTo: '/product/4'
   },
   {
     name: 'Smart Watch Black',
@@ -45,7 +45,7 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/deal-of-the-week-img-3.webp',
-    redirectTo: '/product/type'
+    redirectTo: '/product/5'
   },
   {
     name: 'Smart Watch Black',
@@ -53,18 +53,18 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/deal-of-the-week-img-4.webp',
-    redirectTo: '/product/type'
+    redirectTo: '/product/6'
   }
 ];
 
 interface ItemProps {
   item: {
-    name: string;
-    reviewStar: number;
-    price: number;
-    mrp: number;
-    imageUrl: string;
-    redirectTo: string;
+    name: string,
+    reviewStar: number,
+    price: number,
+    mrp: number,
+    imageUrl: string,
+    redirectTo: string
   };
 }
 

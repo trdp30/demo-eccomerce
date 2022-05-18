@@ -52,12 +52,7 @@ function SectionTwo() {
         </Stack>
       </Grid>
       <Grid item xs={12} md={6} height={'100%'}>
-        <Link
-          component={RouteLink}
-          to={'/special-offer'}
-          color={'#000'}
-          sx={{ textDecoration: 'none' }}
-        >
+        <Link component={RouteLink} to={'/product'} color={'#000'} sx={{ textDecoration: 'none' }}>
           <Grid
             container
             sx={{

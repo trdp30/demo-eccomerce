@@ -95,14 +95,14 @@ const Navbar: React.FC = () => {
         </Container>
       </AppBar>
       <Toolbar disableGutters sx={{ flexGrow: 1, justifyContent: 'center' }}>
-        <Link component={RouterLink} to="/home">
+        <Link component={RouterLink} to="/">
           <Box sx={{ m: 2, display: 'block' }}>
             <Typography textAlign="center" color={'black'}>
               Quick Link 1
             </Typography>
           </Box>
         </Link>
-        <Link component={RouterLink} to="/product-details">
+        <Link component={RouterLink} to="/product">
           <Box sx={{ m: 2, display: 'block' }}>
             <Typography textAlign="center" color={'black'}>
               Quick Link 2

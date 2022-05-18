@@ -13,7 +13,7 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/new-arrival-img-1.webp',
-    redirectTo: '/product/type'
+    redirectTo: '/product'
   },
   {
     name: 'Smart Watch Black',
@@ -21,7 +21,7 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/new-arrival-img-2.webp',
-    redirectTo: '/product/type'
+    redirectTo: '/product'
   },
   {
     name: 'Smart Watch Black',
@@ -29,7 +29,7 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/new-arrival-img-3.webp',
-    redirectTo: '/product/type'
+    redirectTo: '/product'
   },
   {
     name: 'Smart Watch Black',
@@ -37,7 +37,7 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/new-arrival-img-4.webp',
-    redirectTo: '/product/type'
+    redirectTo: '/product'
   },
   {
     name: 'Smart Watch Black',
@@ -45,7 +45,7 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/new-arrival-img-5.webp',
-    redirectTo: '/product/type'
+    redirectTo: '/product'
   },
   {
     name: 'Smart Watch Black',
@@ -53,18 +53,18 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/new-arrival-img-6.webp',
-    redirectTo: '/product/type'
+    redirectTo: '/product'
   }
 ];
 
 interface ItemProps {
   item: {
-    name: string;
-    reviewStar: number;
-    price: number;
-    mrp: number;
-    imageUrl: string;
-    redirectTo: string;
+    name: string,
+    reviewStar: number,
+    price: number,
+    mrp: number,
+    imageUrl: string,
+    redirectTo: string
   };
 }
 

@@ -13,7 +13,7 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/flash-deal-img-1.webp',
-    redirectTo: '/item/1'
+    redirectTo: '/product/1'
   },
   {
     name: 'Smart Watch Black',
@@ -21,7 +21,7 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/flash-deal-img-2.webp',
-    redirectTo: '/item/2'
+    redirectTo: '/product/2'
   },
   {
     name: 'Smart Watch Black',
@@ -29,7 +29,7 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/flash-deal-img-3.webp',
-    redirectTo: '/item/3'
+    redirectTo: '/product/3'
   },
   {
     name: 'Smart Watch Black',
@@ -37,7 +37,7 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/flash-deal-img-4.webp',
-    redirectTo: '/item/4'
+    redirectTo: '/product/4'
   },
   {
     name: 'Smart Watch Black',
@@ -45,18 +45,18 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/flash-deal-img-3.webp',
-    redirectTo: '/item/5'
+    redirectTo: '/product/5'
   }
 ];
 
 interface ItemProps {
   item: {
-    name: string;
-    reviewStar: number;
-    price: number;
-    mrp: number;
-    imageUrl: string;
-    redirectTo: string;
+    name: string,
+    reviewStar: number,
+    price: number,
+    mrp: number,
+    imageUrl: string,
+    redirectTo: string
   };
 }
 

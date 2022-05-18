@@ -18,7 +18,7 @@ const Home: React.FC = () => {
             <Grid item xs={12} md={5} lg={4}>
               <Link
                 component={RouteLink}
-                to="/special-offer"
+                to="/product"
                 color={'#000'}
                 sx={{ textDecoration: 'none' }}
               >
@@ -116,7 +116,7 @@ const Home: React.FC = () => {
             <Grid item xs={12} md={7} lg={8}>
               <Link
                 component={RouteLink}
-                to="/jackets"
+                to="/product"
                 sx={{ textDecoration: 'none' }}
                 color={'#000'}
               >
@@ -202,7 +202,7 @@ const Home: React.FC = () => {
               <Box sx={{ marginTop: '1.5rem' }} />
               <Link
                 component={RouteLink}
-                to="/jackets"
+                to="/product"
                 color={'#000'}
                 sx={{ textDecoration: 'none' }}
               >
