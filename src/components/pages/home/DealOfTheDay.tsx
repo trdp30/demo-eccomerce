@@ -1,9 +1,9 @@
-import { Stack, Typography, Grid, Button } from '@mui/material';
+import { Stack, Typography, Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useMemo } from 'react';
 import Carousel from 'components/common/Carousel';
 import { Settings } from 'react-slick';
-import RouterLink from 'components/common/RouterLink';
+import BuyNowButton from 'components/common/BuyNowButton';
 
 const itemData = [
   {
@@ -12,7 +12,7 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/xiaomi-watch.png',
-    redirectTo: '/product/1'
+    redirectTo: '/checkout'
   },
   {
     name: 'Smart Watch Black',
@@ -20,7 +20,7 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/xiaomi-watch.png',
-    redirectTo: '/product/2'
+    redirectTo: '/checkout'
   },
   {
     name: 'Smart Watch Black',
@@ -28,7 +28,7 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/xiaomi-watch.png',
-    redirectTo: '/product/3'
+    redirectTo: '/checkout'
   },
   {
     name: 'Smart Watch Black',
@@ -36,7 +36,7 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/xiaomi-watch.png',
-    redirectTo: '/product/4'
+    redirectTo: '/checkout'
   },
   {
     name: 'Smart Watch Black',
@@ -44,7 +44,7 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/xiaomi-watch.png',
-    redirectTo: '/product/5'
+    redirectTo: '/checkout'
   },
   {
     name: 'Smart Watch Black',
@@ -52,18 +52,18 @@ const itemData = [
     price: 187,
     mrp: 250,
     imageUrl: '/assets/images/xiaomi-watch.png',
-    redirectTo: '/product/6'
+    redirectTo: '/checkout'
   }
 ];
 
 interface ItemProps {
   item: {
-    name: string,
-    reviewStar: number,
-    price: number,
-    mrp: number,
-    imageUrl: string,
-    redirectTo: string
+    name: string;
+    reviewStar: number;
+    price: number;
+    mrp: number;
+    imageUrl: string;
+    redirectTo: string;
   };
 }
 
@@ -96,10 +96,11 @@ const Item: React.FC<ItemProps> = (props) => {
             Fresh Deal Everyday, Get It Now!
           </Typography>
           <Box>
-            <RouterLink to={item.redirectTo}>
-              <Button variant="contained">BUY NOW</Button>
-            </RouterLink>
-            <Button></Button>
+            {/* <RouterLink to={item.redirectTo}> */}
+            <BuyNowButton to={item.redirectTo} />
+            {/* <Button variant="contained">BUY NOW</Button> */}
+            {/* </RouterLink> */}
+            {/* <Button></Button> */}
           </Box>
         </Stack>
       </Grid>

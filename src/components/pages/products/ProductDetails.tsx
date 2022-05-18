@@ -15,6 +15,7 @@ import AvailableOffer from 'components/pages/products/AvailableOffer';
 import ProductImagesGroup from 'components/pages/products/ProductImagesGroup';
 import ProductDescriptionTab from 'components/pages/products/ProductDescriptionTab';
 import RelatedProductList from './RelatedProductList';
+import BuyNowButton from 'components/common/BuyNowButton';
 
 const ProductDetails: React.FC = () => {
   const product: Product = useMemo(
@@ -73,7 +74,7 @@ const ProductDetails: React.FC = () => {
                 </Box>
                 <Box>
                   <ButtonGroup>
-                    <Button variant={'contained'}>Buy Now</Button>
+                    <BuyNowButton to="/checkout" />
                     <Button variant={'outlined'}>Add To Cart</Button>
                   </ButtonGroup>
                 </Box>
