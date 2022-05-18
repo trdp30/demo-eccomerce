@@ -21,8 +21,8 @@
   "rules": {
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
-    "semi": ["error", "always"],
-    "prettier/prettier": ["warn", { "singleQuote": true, "parser": "flow" }],
+    "semi": "off",
+    "prettier/prettier": ["warn", { "singleQuote": true, "parser": "flow", "semi": false }],
     "arrow-body-style": "off"
   }
 }

@@ -1,21 +1,22 @@
-import React from 'react';
-import 'App.css';
-import { CssBaseline, StyledEngineProvider, ThemeProvider } from '@mui/material';
-import { CacheProvider } from '@emotion/react';
-import createCache from '@emotion/cache';
+import React from 'react'
+import 'App.css'
+import { CssBaseline, StyledEngineProvider, ThemeProvider } from '@mui/material'
+import { CacheProvider } from '@emotion/react'
+import createCache from '@emotion/cache'
 
-import theme from 'theme';
-import Home from 'components/pages/home/Home';
-import { Routes, Route, Outlet } from 'react-router-dom';
-import Layout from 'components/Layout';
-import Products from 'components/pages/products/Products';
-import ProductDetails from 'components/pages/products/ProductDetails';
-import Checkout from 'components/pages/checkout/Checkout';
+import theme from 'theme'
+import Home from 'components/pages/home/Home'
+import { Routes, Route, Outlet } from 'react-router-dom'
+import Layout from 'components/Layout'
+import Products from 'components/pages/products/Products'
+import ProductDetails from 'components/pages/products/ProductDetails'
+import Checkout from 'components/pages/checkout/Checkout'
+import Cart from 'components/pages/cart/Cart'
 
 const cache = createCache({
   key: 'demo-ecommerce',
   prepend: true
-});
+})
 
 function App() {
   return (
@@ -31,12 +32,13 @@ function App() {
                 <Route path=":id" element={<ProductDetails />} />
               </Route>
               <Route path="/checkout" element={<Checkout />} />
+              <Route path="/cart" element={<Cart />} />
             </Route>
           </Routes>
         </StyledEngineProvider>
       </ThemeProvider>
     </CacheProvider>
-  );
+  )
 }
 
-export default App;
+export default App

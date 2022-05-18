@@ -1,10 +1,10 @@
-import { Stack, Typography, Link } from '@mui/material';
-import { Box } from '@mui/system';
-import React, { useMemo } from 'react';
-import BoltIcon from '@mui/icons-material/Bolt';
-import Carousel from 'components/common/Carousel';
-import { Settings } from 'react-slick';
-import { Link as RouteLink } from 'react-router-dom';
+import { Stack, Typography, Link } from '@mui/material'
+import { Box } from '@mui/system'
+import React, { useMemo } from 'react'
+import BoltIcon from '@mui/icons-material/Bolt'
+import Carousel from 'components/common/Carousel'
+import { Settings } from 'react-slick'
+import { Link as RouteLink } from 'react-router-dom'
 
 const itemData = [
   {
@@ -55,21 +55,21 @@ const itemData = [
     imageUrl: '/assets/images/deal-of-the-week-img-4.webp',
     redirectTo: '/product/6'
   }
-];
+]
 
 interface ItemProps {
   item: {
-    name: string,
-    reviewStar: number,
-    price: number,
-    mrp: number,
-    imageUrl: string,
+    name: string
+    reviewStar: number
+    price: number
+    mrp: number
+    imageUrl: string
     redirectTo: string
-  };
+  }
 }
 
 const Item: React.FC<ItemProps> = (props) => {
-  const { item } = props;
+  const { item } = props
   return (
     <Link component={RouteLink} to={item.redirectTo} sx={{ textDecoration: 'none' }} color={'#000'}>
       <Box
@@ -90,8 +90,8 @@ const Item: React.FC<ItemProps> = (props) => {
         <Typography sx={{ fontWeight: 500, margin: '10px' }}>{item.name}</Typography>
       </Box>
     </Link>
-  );
-};
+  )
+}
 
 const ItemCarousel: React.FC = () => {
   const carouselSetting: Settings = useMemo(
@@ -108,15 +108,15 @@ const ItemCarousel: React.FC = () => {
       slidesPerRow: 1
     }),
     []
-  );
+  )
   return (
     <Carousel settings={carouselSetting}>
       {itemData.map((item, index) => (
         <Item key={index} item={item} />
       ))}
     </Carousel>
-  );
-};
+  )
+}
 
 const DealOfTheWeek: React.FC = () => {
   return (
@@ -131,7 +131,7 @@ const DealOfTheWeek: React.FC = () => {
         <ItemCarousel />
       </Box>
     </Stack>
-  );
-};
+  )
+}
 
-export default DealOfTheWeek;
+export default DealOfTheWeek

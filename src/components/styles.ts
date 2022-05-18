@@ -1,4 +1,4 @@
-import { makeStyles } from '../makeStyles';
+import { makeStyles } from 'makeStyles'
 
 const useStyles = makeStyles()(() => {
   return {
@@ -21,7 +21,7 @@ const useStyles = makeStyles()(() => {
     },
     flashDealCarouselContainer: {},
     flashDealCarousel: {}
-  };
-});
+  }
+})
 
-export default useStyles;
+export default useStyles

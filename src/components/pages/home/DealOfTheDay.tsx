@@ -1,9 +1,9 @@
-import { Stack, Typography, Grid } from '@mui/material';
-import { Box } from '@mui/system';
-import React, { useMemo } from 'react';
-import Carousel from 'components/common/Carousel';
-import { Settings } from 'react-slick';
-import BuyNowButton from 'components/common/BuyNowButton';
+import { Stack, Typography, Grid } from '@mui/material'
+import { Box } from '@mui/system'
+import React, { useMemo } from 'react'
+import Carousel from 'components/common/Carousel'
+import { Settings } from 'react-slick'
+import BuyNowButton from 'components/common/BuyNowButton'
 
 const itemData = [
   {
@@ -54,21 +54,21 @@ const itemData = [
     imageUrl: '/assets/images/xiaomi-watch.png',
     redirectTo: '/checkout'
   }
-];
+]
 
 interface ItemProps {
   item: {
-    name: string;
-    reviewStar: number;
-    price: number;
-    mrp: number;
-    imageUrl: string;
-    redirectTo: string;
-  };
+    name: string
+    reviewStar: number
+    price: number
+    mrp: number
+    imageUrl: string
+    redirectTo: string
+  }
 }
 
 const Item: React.FC<ItemProps> = (props) => {
-  const { item } = props;
+  const { item } = props
   return (
     <Grid container sx={{ backgroundColor: '#fff', borderRadius: '10px', padding: '30px 0' }}>
       <Grid item xs={12} sm={12} md={5} lg={6}>
@@ -105,8 +105,8 @@ const Item: React.FC<ItemProps> = (props) => {
         </Stack>
       </Grid>
     </Grid>
-  );
-};
+  )
+}
 
 const ItemCarousel: React.FC = () => {
   const carouselSetting: Settings = useMemo(
@@ -123,22 +123,22 @@ const ItemCarousel: React.FC = () => {
       pauseOnHover: false
     }),
     []
-  );
+  )
   return (
     <Carousel settings={carouselSetting}>
       {itemData.map((item, index) => (
         <Item key={index} item={item} />
       ))}
     </Carousel>
-  );
-};
+  )
+}
 
 const DealOfTheDay: React.FC = () => {
   return (
     <Box>
       <ItemCarousel />
     </Box>
-  );
-};
+  )
+}
 
-export default DealOfTheDay;
+export default DealOfTheDay

@@ -1,10 +1,10 @@
-import { ImageListItem, Stack, Typography, ImageListItemBar, Rating, Link } from '@mui/material';
-import { Box } from '@mui/system';
-import React, { useMemo } from 'react';
-import BoltIcon from '@mui/icons-material/Bolt';
-import Carousel from 'components/common/Carousel';
-import { Settings } from 'react-slick';
-import { Link as RouteLink } from 'react-router-dom';
+import { ImageListItem, Stack, Typography, ImageListItemBar, Rating, Link } from '@mui/material'
+import { Box } from '@mui/system'
+import React, { useMemo } from 'react'
+import BoltIcon from '@mui/icons-material/Bolt'
+import Carousel from 'components/common/Carousel'
+import { Settings } from 'react-slick'
+import { Link as RouteLink } from 'react-router-dom'
 
 const itemData = [
   {
@@ -47,21 +47,21 @@ const itemData = [
     imageUrl: '/assets/images/flash-deal-img-3.webp',
     redirectTo: '/product/5'
   }
-];
+]
 
 interface ItemProps {
   item: {
-    name: string,
-    reviewStar: number,
-    price: number,
-    mrp: number,
-    imageUrl: string,
+    name: string
+    reviewStar: number
+    price: number
+    mrp: number
+    imageUrl: string
     redirectTo: string
-  };
+  }
 }
 
 const Item: React.FC<ItemProps> = (props) => {
-  const { item } = props;
+  const { item } = props
   return (
     <Link component={RouteLink} to={item.redirectTo} sx={{ textDecoration: 'none' }} color={'#000'}>
       <ImageListItem
@@ -94,8 +94,8 @@ const Item: React.FC<ItemProps> = (props) => {
         />
       </ImageListItem>
     </Link>
-  );
-};
+  )
+}
 
 const ItemCarousel: React.FC = () => {
   const carouselSetting: Settings = useMemo(
@@ -136,15 +136,15 @@ const ItemCarousel: React.FC = () => {
       ]
     }),
     []
-  );
+  )
   return (
     <Carousel settings={carouselSetting}>
       {itemData.map((item, index) => (
         <Item key={index} item={item} />
       ))}
     </Carousel>
-  );
-};
+  )
+}
 
 const FlashDeal: React.FC = () => {
   return (
@@ -159,7 +159,7 @@ const FlashDeal: React.FC = () => {
         <ItemCarousel />
       </Box>
     </Stack>
-  );
-};
+  )
+}
 
-export default FlashDeal;
+export default FlashDeal

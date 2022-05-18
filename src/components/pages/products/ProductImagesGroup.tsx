@@ -1,7 +1,7 @@
-import React from 'react';
-import Avatar from '@mui/material/Avatar';
-import faker from '@faker-js/faker';
-import { Box } from '@mui/material';
+import React from 'react'
+import Avatar from '@mui/material/Avatar'
+import faker from '@faker-js/faker'
+import { Box } from '@mui/material'
 
 const ProductImagesGroup: React.FC = () => {
   return (
@@ -37,7 +37,7 @@ const ProductImagesGroup: React.FC = () => {
         sx={{ mx: 1 }}
       />
     </Box>
-  );
-};
+  )
+}
 
-export default ProductImagesGroup;
+export default ProductImagesGroup

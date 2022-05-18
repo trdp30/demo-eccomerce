@@ -1,7 +1,7 @@
-import React from 'react';
-import { Box } from '@mui/material';
-import { Outlet } from 'react-router-dom';
-import Navbar from 'components/Navbar';
+import React from 'react'
+import { Box } from '@mui/material'
+import { Outlet } from 'react-router-dom'
+import Navbar from 'components/Navbar'
 
 const Layout: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const Layout: React.FC = () => {
       <Navbar />
       <Outlet />
     </Box>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

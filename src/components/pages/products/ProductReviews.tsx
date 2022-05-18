@@ -1,6 +1,6 @@
-import faker from '@faker-js/faker';
-import { Avatar, Box, Divider, Rating, Stack, Typography } from '@mui/material';
-import React from 'react';
+import faker from '@faker-js/faker'
+import { Avatar, Box, Divider, Rating, Stack, Typography } from '@mui/material'
+import React from 'react'
 
 const ReviewCard: React.FC = () => {
   return (
@@ -19,8 +19,8 @@ const ReviewCard: React.FC = () => {
       </Stack>
       <Divider sx={{ marginTop: 3 }} />
     </Box>
-  );
-};
+  )
+}
 
 const ProductReview: React.FC = () => {
   return (
@@ -32,7 +32,7 @@ const ProductReview: React.FC = () => {
       <ReviewCard />
       <ReviewCard />
     </Stack>
-  );
-};
+  )
+}
 
-export default ProductReview;
+export default ProductReview

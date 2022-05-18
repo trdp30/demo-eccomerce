@@ -1,21 +1,13 @@
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Container,
-  Grid,
-  Rating,
-  Stack,
-  Typography
-} from '@mui/material';
-import React, { useMemo } from 'react';
-import faker from '@faker-js/faker';
-import { Product } from 'components/pages/products/ProductCard';
-import AvailableOffer from 'components/pages/products/AvailableOffer';
-import ProductImagesGroup from 'components/pages/products/ProductImagesGroup';
-import ProductDescriptionTab from 'components/pages/products/ProductDescriptionTab';
-import RelatedProductList from './RelatedProductList';
-import BuyNowButton from 'components/common/BuyNowButton';
+import { Box, ButtonGroup, Container, Grid, Rating, Stack, Typography } from '@mui/material'
+import React, { useMemo } from 'react'
+import faker from '@faker-js/faker'
+import { Product } from 'components/pages/products/ProductCard'
+import AvailableOffer from 'components/pages/products/AvailableOffer'
+import ProductImagesGroup from 'components/pages/products/ProductImagesGroup'
+import ProductDescriptionTab from 'components/pages/products/ProductDescriptionTab'
+import RelatedProductList from 'components/pages/products/RelatedProductList'
+import BuyNowButton from 'components/common/BuyNowButton'
+import AddToCartButton from 'components/common/AddToCartButton'
 
 const ProductDetails: React.FC = () => {
   const product: Product = useMemo(
@@ -28,7 +20,7 @@ const ProductDetails: React.FC = () => {
       rating: 4
     }),
     []
-  );
+  )
   return (
     <Container sx={{ paddingTop: '30px', paddingBottom: '30px' }}>
       <Stack spacing={4}>
@@ -75,7 +67,7 @@ const ProductDetails: React.FC = () => {
                 <Box>
                   <ButtonGroup>
                     <BuyNowButton to="/checkout" />
-                    <Button variant={'outlined'}>Add To Cart</Button>
+                    <AddToCartButton />
                   </ButtonGroup>
                 </Box>
               </Stack>
@@ -90,7 +82,7 @@ const ProductDetails: React.FC = () => {
         </Box>
       </Stack>
     </Container>
-  );
-};
+  )
+}
 
-export default ProductDetails;
+export default ProductDetails

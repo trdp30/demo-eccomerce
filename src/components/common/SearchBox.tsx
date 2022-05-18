@@ -1,14 +1,14 @@
-import * as React from 'react';
-import Paper from '@mui/material/Paper';
-import InputBase from '@mui/material/InputBase';
-import IconButton from '@mui/material/IconButton';
-import SearchIcon from '@mui/icons-material/Search';
-import { MenuItem, Select, Typography } from '@mui/material';
-import useStyles from 'components/styles';
+import * as React from 'react'
+import Paper from '@mui/material/Paper'
+import InputBase from '@mui/material/InputBase'
+import IconButton from '@mui/material/IconButton'
+import SearchIcon from '@mui/icons-material/Search'
+import { MenuItem, Select, Typography } from '@mui/material'
+import useStyles from 'components/styles'
 
 export default function SearchBox() {
-  const [category, updateCategory] = React.useState('');
-  const { classes } = useStyles();
+  const [category, updateCategory] = React.useState('')
+  const { classes } = useStyles()
   return (
     <Paper
       component="form"
@@ -62,5 +62,5 @@ export default function SearchBox() {
         <SearchIcon />
       </IconButton>
     </Paper>
-  );
+  )
 }

@@ -1,10 +1,10 @@
-import { Typography, Box } from '@mui/material';
-import React from 'react';
-import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
-import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined';
-import MoreTimeOutlinedIcon from '@mui/icons-material/MoreTimeOutlined';
-import PaymentsOutlinedIcon from '@mui/icons-material/PaymentsOutlined';
-import SupportAgentOutlinedIcon from '@mui/icons-material/SupportAgentOutlined';
+import { Typography, Box } from '@mui/material'
+import React from 'react'
+import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined'
+import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined'
+import MoreTimeOutlinedIcon from '@mui/icons-material/MoreTimeOutlined'
+import PaymentsOutlinedIcon from '@mui/icons-material/PaymentsOutlined'
+import SupportAgentOutlinedIcon from '@mui/icons-material/SupportAgentOutlined'
 
 const TagLine: React.FC = () => {
   return (
@@ -72,7 +72,7 @@ const TagLine: React.FC = () => {
         </Box>
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default TagLine;
+export default TagLine

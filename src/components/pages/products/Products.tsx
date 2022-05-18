@@ -1,6 +1,6 @@
-import { Container, Grid } from '@mui/material';
-import React from 'react';
-import ProductList from './ProduictList';
+import { Container, Grid } from '@mui/material'
+import React from 'react'
+import ProductList from 'components/pages/products/ProductList'
 
 const Products: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const Products: React.FC = () => {
         </Grid>
       </Grid>
     </Container>
-  );
-};
+  )
+}
 
-export default Products;
+export default Products

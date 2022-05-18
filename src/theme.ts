@@ -1,5 +1,5 @@
-import { createTheme, responsiveFontSizes } from '@mui/material/styles';
-import { lightBlue, grey, red } from '@mui/material/colors';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles'
+import { lightBlue, grey, red } from '@mui/material/colors'
 
 let theme = createTheme({
   palette: {
@@ -12,7 +12,7 @@ let theme = createTheme({
   typography: {
     fontSize: 14
   }
-});
-theme = responsiveFontSizes(theme);
+})
+theme = responsiveFontSizes(theme)
 
-export default theme;
+export default theme

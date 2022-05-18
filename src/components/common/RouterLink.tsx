@@ -1,11 +1,11 @@
-import { Link, LinkBaseProps } from '@mui/material';
-import React from 'react';
-import { Link as RouteLink, LinkProps } from 'react-router-dom';
+import { Link, LinkBaseProps } from '@mui/material'
+import React from 'react'
+import { Link as RouteLink, LinkProps } from 'react-router-dom'
 
-export type RouterLinkProps = LinkProps & LinkBaseProps;
+export type RouterLinkProps = LinkProps & LinkBaseProps
 
 const RouterLink: React.FC<RouterLinkProps> = (props) => {
-  const { children, sx = {}, to, ...rest } = props;
+  const { children, sx = {}, to, ...rest } = props
   return (
     <Link
       component={RouteLink}
@@ -15,7 +15,7 @@ const RouterLink: React.FC<RouterLinkProps> = (props) => {
     >
       {children}
     </Link>
-  );
-};
+  )
+}
 
-export default RouterLink;
+export default RouterLink

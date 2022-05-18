@@ -1,8 +1,8 @@
-import { Grid, Stack, Box, Typography, Link } from '@mui/material';
-import { Link as RouteLink } from 'react-router-dom';
-import React from 'react';
-import AssuredWorkloadOutlinedIcon from '@mui/icons-material/AssuredWorkloadOutlined';
-import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
+import { Grid, Stack, Box, Typography, Link } from '@mui/material'
+import { Link as RouteLink } from 'react-router-dom'
+import React from 'react'
+import AssuredWorkloadOutlinedIcon from '@mui/icons-material/AssuredWorkloadOutlined'
+import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined'
 
 function SectionTwo() {
   return (
@@ -100,7 +100,7 @@ function SectionTwo() {
         </Link>
       </Grid>
     </Grid>
-  );
+  )
 }
 
-export default SectionTwo;
+export default SectionTwo

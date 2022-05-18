@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { Box, Typography } from '@mui/material';
-import { useMemo } from 'react';
-import faker from '@faker-js/faker';
+import * as React from 'react'
+import { Box, Typography } from '@mui/material'
+import { useMemo } from 'react'
+import faker from '@faker-js/faker'
 
 export default function AvailableOffer() {
   const additionalOffer = useMemo(
@@ -14,7 +14,7 @@ export default function AvailableOffer() {
       }
     ],
     []
-  );
+  )
 
   return (
     <Box>
@@ -27,5 +27,5 @@ export default function AvailableOffer() {
         ))}
       </Box>
     </Box>
-  );
+  )
 }

@@ -1,13 +1,13 @@
-import { Box, Container, Grid, Link, Typography, Stack } from '@mui/material';
-import React from 'react';
-import { Link as RouteLink } from 'react-router-dom';
-import SectionTwo from 'components/pages/home/SectionTwo';
-import FlashDeal from 'components/pages/home/FlashDeal';
-import NewArrivals from 'components/pages/home/NewArrivals';
-import DealOfTheWeek from 'components/pages/home/DealOfTheWeek';
-import DealOfTheDay from 'components/pages/home/DealOfTheDay';
-import TrendingItems from 'components/pages/home/TrendingItems';
-import TagLine from 'components/pages/home/TagLine';
+import { Box, Container, Grid, Link, Typography, Stack } from '@mui/material'
+import React from 'react'
+import { Link as RouteLink } from 'react-router-dom'
+import SectionTwo from 'components/pages/home/SectionTwo'
+import FlashDeal from 'components/pages/home/FlashDeal'
+import NewArrivals from 'components/pages/home/NewArrivals'
+import DealOfTheWeek from 'components/pages/home/DealOfTheWeek'
+import DealOfTheDay from 'components/pages/home/DealOfTheDay'
+import TrendingItems from 'components/pages/home/TrendingItems'
+import TagLine from 'components/pages/home/TagLine'
 
 const Home: React.FC = () => {
   return (
@@ -311,7 +311,7 @@ const Home: React.FC = () => {
         </Box>
       </Stack>
     </Container>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

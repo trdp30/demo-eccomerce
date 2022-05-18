@@ -1,22 +1,22 @@
-import React from 'react';
-import RouterLink from 'components/common/RouterLink';
-import { Box, Typography, Rating, Paper } from '@mui/material';
+import React from 'react'
+import RouterLink from 'components/common/RouterLink'
+import { Box, Typography, Rating, Paper } from '@mui/material'
 
 export interface Product {
-  id: number;
-  imageUrl: string;
-  price: string;
-  mrp: string;
-  name: string;
-  rating?: number;
+  id: number
+  imageUrl: string
+  price: string
+  mrp: string
+  name: string
+  rating?: number
 }
 
 interface Props {
-  product: Product;
+  product: Product
 }
 
 const ProductCard: React.FC<Props> = (props) => {
-  const { product } = props;
+  const { product } = props
   return (
     <Paper sx={{ width: '100%', height: '100%' }}>
       <RouterLink to={`${product.id}`}>
@@ -43,7 +43,7 @@ const ProductCard: React.FC<Props> = (props) => {
         </Box>
       </RouterLink>
     </Paper>
-  );
-};
+  )
+}
 
-export default ProductCard;
+export default ProductCard

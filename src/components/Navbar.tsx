@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 import {
   AppBar,
   Box,
@@ -11,23 +11,23 @@ import {
   Tooltip,
   MenuItem,
   Link
-} from '@mui/material';
-import SearchBox from 'components/common/SearchBox';
-import SearchIcon from '@mui/icons-material/Search';
-import { Link as RouterLink } from 'react-router-dom';
+} from '@mui/material'
+import SearchBox from 'components/common/SearchBox'
+import SearchIcon from '@mui/icons-material/Search'
+import { Link as RouterLink } from 'react-router-dom'
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
 
 const Navbar: React.FC = () => {
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null)
 
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
+    setAnchorElUser(event.currentTarget)
+  }
 
   const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+    setAnchorElUser(null)
+  }
 
   return (
     <React.Fragment>
@@ -125,6 +125,6 @@ const Navbar: React.FC = () => {
         </Link>
       </Toolbar>
     </React.Fragment>
-  );
-};
-export default Navbar;
+  )
+}
+export default Navbar

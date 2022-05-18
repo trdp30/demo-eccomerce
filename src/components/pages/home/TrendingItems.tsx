@@ -1,6 +1,6 @@
-import { Stack, Box, Typography, Grid, Rating } from '@mui/material';
-import RouterLink from 'components/common/RouterLink';
-import React from 'react';
+import { Stack, Box, Typography, Grid, Rating } from '@mui/material'
+import RouterLink from 'components/common/RouterLink'
+import React from 'react'
 
 const itemData = [
   {
@@ -67,7 +67,7 @@ const itemData = [
     imageUrl: '/assets/images/flash-deal-img-4.webp',
     redirectTo: '/product/4'
   }
-];
+]
 
 const TrendingItems: React.FC = () => {
   return (
@@ -104,7 +104,7 @@ const TrendingItems: React.FC = () => {
         {/* </Grid> */}
       </Box>
     </Stack>
-  );
-};
+  )
+}
 
-export default TrendingItems;
+export default TrendingItems

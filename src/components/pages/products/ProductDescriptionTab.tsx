@@ -1,18 +1,18 @@
-import * as React from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
-import Description from 'components/pages/products/Description';
-import ProductReview from 'components/pages/products/ProductReviews';
+import * as React from 'react'
+import Tabs from '@mui/material/Tabs'
+import Tab from '@mui/material/Tab'
+import Box from '@mui/material/Box'
+import Description from 'components/pages/products/Description'
+import ProductReview from 'components/pages/products/ProductReviews'
 
 interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
+  children?: React.ReactNode
+  index: number
+  value: number
 }
 
 function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
+  const { children, value, index, ...other } = props
 
   return (
     <div
@@ -24,22 +24,22 @@ function TabPanel(props: TabPanelProps) {
     >
       {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
     </div>
-  );
+  )
 }
 
 function a11yProps(index: number) {
   return {
     id: `simple-tab-${index}`,
     'aria-controls': `simple-tabpanel-${index}`
-  };
+  }
 }
 
 export default function ProductDescriptionTab() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(0)
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
+    setValue(newValue)
+  }
 
   return (
     <Box sx={{ width: '100%' }}>
@@ -56,5 +56,5 @@ export default function ProductDescriptionTab() {
         <ProductReview />
       </TabPanel>
     </Box>
-  );
+  )
 }
