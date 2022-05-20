@@ -3,8 +3,8 @@ import { lightBlue, grey, red } from '@mui/material/colors'
 
 let theme = createTheme({
   palette: {
-    primary: red,
-    secondary: lightBlue,
+    primary: lightBlue,
+    secondary: red,
     background: {
       default: grey[100]
     }

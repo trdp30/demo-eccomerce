@@ -2,6 +2,7 @@ import { Avatar, Box, Grid, Paper, Stack, Typography } from '@mui/material'
 import QuantityButton from 'components/common/QuantityButton'
 import React, { useMemo } from 'react'
 import RemoveCartItem from 'components/pages/cart/RemoveCartItem'
+import PriceLabel from 'components/common/PriceLabel'
 
 export type CartItemType = {
   id: number
@@ -32,19 +33,22 @@ const CartItem: React.FC<Props> = (props) => {
             </Box>
             <Box sx={{ mx: 2 }}>
               <Typography>{cartItem.name}</Typography>
-              <Box>
-                <Typography component={'span'} variant="caption">
-                  Rs. {cartItem.price}
-                </Typography>
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  justifyContent: 'flex-start',
+                  alignItems: 'center'
+                }}
+              >
+                <PriceLabel typographyProps={{ variant: 'caption' }} price={cartItem.price} />
                 <Box component={'span'} sx={{ fontSize: 10, mx: 1 }}>
                   X
                 </Box>
                 <Typography component={'span'} variant="caption">
                   {cartItem.quantity}
                 </Typography>
-                <Typography component={'span'} sx={{ ml: 2 }} color="primary">
-                  Rs. <b>{totalPrice}</b>
-                </Typography>
+                <PriceLabel price={totalPrice} sx={{ marginLeft: 2, color: 'primary.main' }} />
               </Box>
             </Box>
           </Box>

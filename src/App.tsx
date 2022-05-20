@@ -31,8 +31,8 @@ function App() {
                 <Route index element={<Products />} />
                 <Route path=":id" element={<ProductDetails />} />
               </Route>
-              <Route path="/checkout" element={<Checkout />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
             </Route>
           </Routes>
         </StyledEngineProvider>
