@@ -1,19 +1,19 @@
 import { Box, ButtonGroup, Container, Grid, Rating, Stack, Typography } from '@mui/material'
 import React, { useMemo } from 'react'
 import faker from '@faker-js/faker'
-import { Product } from 'components/pages/products/ProductCard'
 import AvailableOffer from 'components/pages/products/AvailableOffer'
 import ProductImagesGroup from 'components/pages/products/ProductImagesGroup'
 import ProductDescriptionTab from 'components/pages/products/ProductDescriptionTab'
 import RelatedProductList from 'components/pages/products/RelatedProductList'
 import BuyNowButton from 'components/common/BuyNowButton'
 import AddToCartButton from 'components/common/AddToCartButton'
+import { OrganizationProductType } from 'services/productApi'
 
 const ProductDetails: React.FC = () => {
-  const product: Product = useMemo(
+  const product: OrganizationProductType = useMemo(
     () => ({
-      id: 1,
-      imageUrl: faker.image.business(340, 340, false),
+      id: '1',
+      image_url: faker.image.business(340, 340, false),
       price: faker.commerce.price(),
       mrp: faker.commerce.price(),
       name: faker.commerce.productName(),
@@ -29,7 +29,7 @@ const ProductDetails: React.FC = () => {
             <Grid item xs={12} md={6}>
               <Stack spacing={2}>
                 <Box textAlign={'center'}>
-                  <Box component={'img'} src={product.imageUrl} />
+                  <Box component={'img'} src={product.image_url} />
                 </Box>
                 <Box>
                   <ProductImagesGroup />

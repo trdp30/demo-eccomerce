@@ -1,18 +1,13 @@
 import React from 'react'
 import RouterLink from 'components/common/RouterLink'
-import { Box, Typography, Rating, Paper } from '@mui/material'
-
-export interface Product {
-  id: number
-  imageUrl: string
-  price: string
-  mrp: string
-  name: string
-  rating?: number
-}
+import { Box, Typography, Rating, Paper, ButtonGroup, Stack } from '@mui/material'
+import AddToCartButton from 'components/common/AddToCartButton'
+import BuyNowButton from 'components/common/BuyNowButton'
+import AddProductToServer from 'components/pages/products/AddProductToServer'
+import { OrganizationProductType } from 'services/productApi'
 
 interface Props {
-  product: Product
+  product: OrganizationProductType
 }
 
 const ProductCard: React.FC<Props> = (props) => {
@@ -23,11 +18,13 @@ const ProductCard: React.FC<Props> = (props) => {
         <Box>
           <Box
             component={'img'}
-            src={product.imageUrl}
+            src={product.image_url}
             sx={{ width: '100%', height: '250px' }}
           ></Box>
         </Box>
-        <Box sx={{ padding: '0px 10px 10px 10px' }}>
+      </RouterLink>
+      <Stack spacing={1} sx={{ padding: '0px 10px 20px 10px' }}>
+        <Box>
           <Typography sx={{ fontWeight: 500, marginTop: '10px' }}>{product.name}</Typography>
           <Box>
             <Box sx={{ marginTop: '5px', marginBottom: '5px' }}>
@@ -41,7 +38,16 @@ const ProductCard: React.FC<Props> = (props) => {
             </Typography>
           </Box>
         </Box>
-      </RouterLink>
+        <Box sx={{ textAlign: 'center' }}>
+          <ButtonGroup>
+            <AddToCartButton />
+            <BuyNowButton to={'product/' + product.id} />
+          </ButtonGroup>
+        </Box>
+        <Box sx={{ textAlign: 'center' }}>
+          <AddProductToServer product={product} />
+        </Box>
+      </Stack>
     </Paper>
   )
 }

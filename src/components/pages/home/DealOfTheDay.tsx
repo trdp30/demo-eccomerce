@@ -11,7 +11,7 @@ const itemData = [
     reviewStar: 4,
     price: 187,
     mrp: 250,
-    imageUrl: '/assets/images/xiaomi-watch.png',
+    image_url: '/assets/images/xiaomi-watch.png',
     redirectTo: '/checkout'
   },
   {
@@ -19,7 +19,7 @@ const itemData = [
     reviewStar: 4,
     price: 187,
     mrp: 250,
-    imageUrl: '/assets/images/xiaomi-watch.png',
+    image_url: '/assets/images/xiaomi-watch.png',
     redirectTo: '/checkout'
   },
   {
@@ -27,7 +27,7 @@ const itemData = [
     reviewStar: 4,
     price: 187,
     mrp: 250,
-    imageUrl: '/assets/images/xiaomi-watch.png',
+    image_url: '/assets/images/xiaomi-watch.png',
     redirectTo: '/checkout'
   },
   {
@@ -35,7 +35,7 @@ const itemData = [
     reviewStar: 4,
     price: 187,
     mrp: 250,
-    imageUrl: '/assets/images/xiaomi-watch.png',
+    image_url: '/assets/images/xiaomi-watch.png',
     redirectTo: '/checkout'
   },
   {
@@ -43,7 +43,7 @@ const itemData = [
     reviewStar: 4,
     price: 187,
     mrp: 250,
-    imageUrl: '/assets/images/xiaomi-watch.png',
+    image_url: '/assets/images/xiaomi-watch.png',
     redirectTo: '/checkout'
   },
   {
@@ -51,7 +51,7 @@ const itemData = [
     reviewStar: 4,
     price: 187,
     mrp: 250,
-    imageUrl: '/assets/images/xiaomi-watch.png',
+    image_url: '/assets/images/xiaomi-watch.png',
     redirectTo: '/checkout'
   }
 ]
@@ -62,7 +62,7 @@ interface ItemProps {
     reviewStar: number
     price: number
     mrp: number
-    imageUrl: string
+    image_url: string
     redirectTo: string
   }
 }
@@ -72,7 +72,7 @@ const Item: React.FC<ItemProps> = (props) => {
   return (
     <Grid container sx={{ backgroundColor: '#fff', borderRadius: '10px', padding: '30px 0' }}>
       <Grid item xs={12} sm={12} md={5} lg={6}>
-        <Box component={'img'} src={item.imageUrl} sx={{ margin: 'auto' }} />
+        <Box component={'img'} src={item.image_url} sx={{ margin: 'auto' }} />
       </Grid>
       <Grid item xs={12} sm={12} md={5} lg={4}>
         <Stack spacing={3} sx={{ justifyContent: 'center', height: '100%' }}>

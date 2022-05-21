@@ -12,7 +12,7 @@ const itemData = [
     reviewStar: 4,
     price: 187,
     mrp: 250,
-    imageUrl: '/assets/images/deal-of-the-week-img-1.webp',
+    image_url: '/assets/images/deal-of-the-week-img-1.webp',
     redirectTo: '/product/1'
   },
   {
@@ -20,7 +20,7 @@ const itemData = [
     reviewStar: 4,
     price: 187,
     mrp: 250,
-    imageUrl: '/assets/images/deal-of-the-week-img-2.webp',
+    image_url: '/assets/images/deal-of-the-week-img-2.webp',
     redirectTo: '/product/2'
   },
   {
@@ -28,7 +28,7 @@ const itemData = [
     reviewStar: 4,
     price: 187,
     mrp: 250,
-    imageUrl: '/assets/images/deal-of-the-week-img-3.webp',
+    image_url: '/assets/images/deal-of-the-week-img-3.webp',
     redirectTo: '/product/3'
   },
   {
@@ -36,7 +36,7 @@ const itemData = [
     reviewStar: 4,
     price: 187,
     mrp: 250,
-    imageUrl: '/assets/images/deal-of-the-week-img-4.webp',
+    image_url: '/assets/images/deal-of-the-week-img-4.webp',
     redirectTo: '/product/4'
   },
   {
@@ -44,7 +44,7 @@ const itemData = [
     reviewStar: 4,
     price: 187,
     mrp: 250,
-    imageUrl: '/assets/images/deal-of-the-week-img-3.webp',
+    image_url: '/assets/images/deal-of-the-week-img-3.webp',
     redirectTo: '/product/5'
   },
   {
@@ -52,7 +52,7 @@ const itemData = [
     reviewStar: 4,
     price: 187,
     mrp: 250,
-    imageUrl: '/assets/images/deal-of-the-week-img-4.webp',
+    image_url: '/assets/images/deal-of-the-week-img-4.webp',
     redirectTo: '/product/6'
   }
 ]
@@ -63,7 +63,7 @@ interface ItemProps {
     reviewStar: number
     price: number
     mrp: number
-    imageUrl: string
+    image_url: string
     redirectTo: string
   }
 }
@@ -73,7 +73,7 @@ const Item: React.FC<ItemProps> = (props) => {
   return (
     <Link component={RouteLink} to={item.redirectTo} sx={{ textDecoration: 'none' }} color={'#000'}>
       <Box
-        key={item.imageUrl}
+        key={item.image_url}
         component="div"
         sx={{
           width: { xs: '100%', paddingLeft: '15px', paddingRight: '15px' }
@@ -81,8 +81,8 @@ const Item: React.FC<ItemProps> = (props) => {
       >
         <Box
           component={'img'}
-          src={item.imageUrl}
-          srcSet={item.imageUrl}
+          src={item.image_url}
+          srcSet={item.image_url}
           alt={item.name}
           loading="lazy"
           sx={{ width: '100%', height: '212px', borderRadius: '10px' }}

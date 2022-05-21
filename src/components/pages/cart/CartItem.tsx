@@ -6,7 +6,7 @@ import PriceLabel from 'components/common/PriceLabel'
 
 export type CartItemType = {
   id: number
-  imageUrl: string
+  image_url: string
   price: string
   mrp: string
   name: string
@@ -29,7 +29,7 @@ const CartItem: React.FC<Props> = (props) => {
         <Grid item xs={12} sm={8}>
           <Box sx={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
             <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <Avatar alt="Remy Sharp" src={cartItem.imageUrl} variant="square" />
+              <Avatar alt="Remy Sharp" src={cartItem.image_url} variant="square" />
             </Box>
             <Box sx={{ mx: 2 }}>
               <Typography>{cartItem.name}</Typography>

@@ -12,7 +12,7 @@ const itemData = [
     reviewStar: 4,
     price: 187,
     mrp: 250,
-    imageUrl: '/assets/images/flash-deal-img-1.webp',
+    image_url: '/assets/images/flash-deal-img-1.webp',
     redirectTo: '/product/1'
   },
   {
@@ -20,7 +20,7 @@ const itemData = [
     reviewStar: 4,
     price: 187,
     mrp: 250,
-    imageUrl: '/assets/images/flash-deal-img-2.webp',
+    image_url: '/assets/images/flash-deal-img-2.webp',
     redirectTo: '/product/2'
   },
   {
@@ -28,7 +28,7 @@ const itemData = [
     reviewStar: 4,
     price: 187,
     mrp: 250,
-    imageUrl: '/assets/images/flash-deal-img-3.webp',
+    image_url: '/assets/images/flash-deal-img-3.webp',
     redirectTo: '/product/3'
   },
   {
@@ -36,7 +36,7 @@ const itemData = [
     reviewStar: 4,
     price: 187,
     mrp: 250,
-    imageUrl: '/assets/images/flash-deal-img-4.webp',
+    image_url: '/assets/images/flash-deal-img-4.webp',
     redirectTo: '/product/4'
   },
   {
@@ -44,7 +44,7 @@ const itemData = [
     reviewStar: 4,
     price: 187,
     mrp: 250,
-    imageUrl: '/assets/images/flash-deal-img-3.webp',
+    image_url: '/assets/images/flash-deal-img-3.webp',
     redirectTo: '/product/5'
   }
 ]
@@ -55,7 +55,7 @@ interface ItemProps {
     reviewStar: number
     price: number
     mrp: number
-    imageUrl: string
+    image_url: string
     redirectTo: string
   }
 }
@@ -65,11 +65,11 @@ const Item: React.FC<ItemProps> = (props) => {
   return (
     <Link component={RouteLink} to={item.redirectTo} sx={{ textDecoration: 'none' }} color={'#000'}>
       <ImageListItem
-        key={item.imageUrl}
+        key={item.image_url}
         component="div"
         sx={{ width: { xs: '100%', paddingLeft: '15px', paddingRight: '15px' } }}
       >
-        <img src={item.imageUrl} srcSet={item.imageUrl} alt={item.name} loading="lazy" />
+        <img src={item.image_url} srcSet={item.image_url} alt={item.name} loading="lazy" />
         <ImageListItemBar
           title={<Typography sx={{ fontWeight: 500, marginTop: '10px' }}>{item.name}</Typography>}
           subtitle={

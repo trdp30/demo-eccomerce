@@ -1,19 +1,20 @@
 import React, { useMemo } from 'react'
-import ProductCard, { Product } from 'components/pages/products/ProductCard'
+import ProductCard from 'components/pages/products/ProductCard'
 import faker from '@faker-js/faker'
 import { fill } from 'lodash'
 import { Stack, Box, Typography, Grid } from '@mui/material'
+import { OrganizationProductType } from 'services/productApi'
 
 const RelatedProductList: React.FC = () => {
-  const products: Product[] = useMemo(
+  const products: OrganizationProductType[] = useMemo(
     () =>
       fill(Array(4), {
-        imageUrl: faker.image.unsplash.objects(), // faker.image.business(340, 340, false),
+        image_url: faker.image.unsplash.objects(), // faker.image.business(340, 340, false),
         price: faker.commerce.price(),
         mrp: faker.commerce.price(),
         name: faker.commerce.productName(),
         rating: 4
-      }).map((a, i) => ({ id: i + 1, ...a })),
+      }).map((a, i) => ({ id: String(i + 1), ...a })),
     []
   )
 
