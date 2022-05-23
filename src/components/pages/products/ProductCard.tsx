@@ -3,7 +3,6 @@ import RouterLink from 'components/common/RouterLink'
 import { Box, Typography, Rating, Paper, ButtonGroup, Stack } from '@mui/material'
 import AddToCartButton from 'components/common/AddToCartButton'
 import BuyNowButton from 'components/common/BuyNowButton'
-import AddProductToServer from 'components/pages/products/AddProductToServer'
 import { Product } from 'type'
 
 interface Props {
@@ -20,12 +19,15 @@ const ProductCard: React.FC<Props> = (props) => {
             component={'img'}
             src={product.images[0]}
             sx={{ width: '100%', height: '250px' }}
+            loading="lazy"
           ></Box>
         </Box>
       </RouterLink>
       <Stack spacing={1} sx={{ padding: '0px 10px 20px 10px' }}>
         <Box>
-          <Typography sx={{ fontWeight: 500, marginTop: '10px' }}>{product.title}</Typography>
+          <Typography sx={{ fontWeight: 500, marginTop: '10px' }} noWrap={true}>
+            {product.title}
+          </Typography>
           <Box>
             <Box sx={{ marginTop: '5px', marginBottom: '5px' }}>
               <Rating size="small" name="product-rating" value={4} readOnly={true} />

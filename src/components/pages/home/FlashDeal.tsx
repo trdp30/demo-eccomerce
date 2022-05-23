@@ -1,103 +1,31 @@
-import { ImageListItem, Stack, Typography, ImageListItemBar, Rating, Link } from '@mui/material'
+import { Stack, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useMemo } from 'react'
 import BoltIcon from '@mui/icons-material/Bolt'
 import Carousel from 'components/common/Carousel'
 import { Settings } from 'react-slick'
-import { Link as RouteLink } from 'react-router-dom'
-
-const itemData = [
-  {
-    name: 'Smart Watch Black',
-    reviewStar: 4,
-    price: 187,
-    mrp: 250,
-    image_url: '/assets/images/flash-deal-img-1.webp',
-    redirectTo: '/product/1'
-  },
-  {
-    name: 'Smart Watch Black',
-    reviewStar: 4,
-    price: 187,
-    mrp: 250,
-    image_url: '/assets/images/flash-deal-img-2.webp',
-    redirectTo: '/product/2'
-  },
-  {
-    name: 'Smart Watch Black',
-    reviewStar: 4,
-    price: 187,
-    mrp: 250,
-    image_url: '/assets/images/flash-deal-img-3.webp',
-    redirectTo: '/product/3'
-  },
-  {
-    name: 'Smart Watch Black',
-    reviewStar: 4,
-    price: 187,
-    mrp: 250,
-    image_url: '/assets/images/flash-deal-img-4.webp',
-    redirectTo: '/product/4'
-  },
-  {
-    name: 'Smart Watch Black',
-    reviewStar: 4,
-    price: 187,
-    mrp: 250,
-    image_url: '/assets/images/flash-deal-img-3.webp',
-    redirectTo: '/product/5'
-  }
-]
+import { useProductQuery } from 'services/productApi'
+import { Product } from 'type'
+import ProductCard from 'components/pages/products/ProductCard'
 
 interface ItemProps {
-  item: {
-    name: string
-    reviewStar: number
-    price: number
-    mrp: number
-    image_url: string
-    redirectTo: string
-  }
+  product: Product
 }
 
 const Item: React.FC<ItemProps> = (props) => {
-  const { item } = props
+  const { product } = props
   return (
-    <Link component={RouteLink} to={item.redirectTo} sx={{ textDecoration: 'none' }} color={'#000'}>
-      <ImageListItem
-        key={item.image_url}
-        component="div"
-        sx={{ width: { xs: '100%', paddingLeft: '15px', paddingRight: '15px' } }}
-      >
-        <img src={item.image_url} srcSet={item.image_url} alt={item.name} loading="lazy" />
-        <ImageListItemBar
-          title={<Typography sx={{ fontWeight: 500, marginTop: '10px' }}>{item.name}</Typography>}
-          subtitle={
-            <Box>
-              <Box sx={{ marginTop: '5px', marginBottom: '5px' }}>
-                <Rating
-                  size="small"
-                  name="product-rating"
-                  value={item.reviewStar}
-                  readOnly={true}
-                />
-              </Box>
-              <Typography color={'primary'}>
-                Rs: {item.price}{' '}
-                <Typography sx={{ color: 'gray' }} component={'del'}>
-                  {item.mrp}
-                </Typography>
-              </Typography>
-            </Box>
-          }
-          position="below"
-        />
-      </ImageListItem>
-    </Link>
+    <Box sx={{ width: { xs: '100%', paddingLeft: '15px', paddingRight: '15px' } }}>
+      <ProductCard product={product} />
+    </Box>
   )
 }
 
-const ItemCarousel: React.FC = () => {
+interface ItemCarouselProps {
+  products: Product[]
+}
+
+const ItemCarousel: React.FC<ItemCarouselProps> = ({ products }) => {
   const carouselSetting: Settings = useMemo(
     () => ({
       dots: false,
@@ -139,14 +67,15 @@ const ItemCarousel: React.FC = () => {
   )
   return (
     <Carousel settings={carouselSetting}>
-      {itemData.map((item, index) => (
-        <Item key={index} item={item} />
+      {products.map((product) => (
+        <Item key={product.id} product={product} />
       ))}
     </Carousel>
   )
 }
 
 const FlashDeal: React.FC = () => {
+  const { data = [] } = useProductQuery({ page: 2, per_page: 8 })
   return (
     <Stack spacing={3}>
       <Box>
@@ -156,7 +85,7 @@ const FlashDeal: React.FC = () => {
         </Typography>
       </Box>
       <Box>
-        <ItemCarousel />
+        <ItemCarousel products={data} />
       </Box>
     </Stack>
   )

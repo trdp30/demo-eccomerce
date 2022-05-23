@@ -1,6 +1,5 @@
 import React from 'react'
 import Avatar from '@mui/material/Avatar'
-import faker from '@faker-js/faker'
 import { Box } from '@mui/material'
 
 type Props = {

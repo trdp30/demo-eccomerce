@@ -1,6 +1,5 @@
 import { Typography, Box } from '@mui/material'
 import React from 'react'
-import faker from '@faker-js/faker'
 
 type Props = {
   description?: string
