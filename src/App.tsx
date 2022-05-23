@@ -32,7 +32,7 @@ function App() {
                 <Route index element={<Home />} />
                 <Route path="/product" element={<Outlet />}>
                   <Route index element={<Products />} />
-                  <Route path=":id" element={<ProductDetails />} />
+                  <Route path=":product_id" element={<ProductDetails />} />
                 </Route>
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/checkout" element={<Checkout />} />

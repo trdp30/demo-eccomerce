@@ -4,10 +4,10 @@ import { Box, Typography, Rating, Paper, ButtonGroup, Stack } from '@mui/materia
 import AddToCartButton from 'components/common/AddToCartButton'
 import BuyNowButton from 'components/common/BuyNowButton'
 import AddProductToServer from 'components/pages/products/AddProductToServer'
-import { OrganizationProductType } from 'services/productApi'
+import { Product } from 'type'
 
 interface Props {
-  product: OrganizationProductType
+  product: Product
 }
 
 const ProductCard: React.FC<Props> = (props) => {
@@ -18,14 +18,14 @@ const ProductCard: React.FC<Props> = (props) => {
         <Box>
           <Box
             component={'img'}
-            src={product.image_url}
+            src={product.images[0]}
             sx={{ width: '100%', height: '250px' }}
           ></Box>
         </Box>
       </RouterLink>
       <Stack spacing={1} sx={{ padding: '0px 10px 20px 10px' }}>
         <Box>
-          <Typography sx={{ fontWeight: 500, marginTop: '10px' }}>{product.name}</Typography>
+          <Typography sx={{ fontWeight: 500, marginTop: '10px' }}>{product.title}</Typography>
           <Box>
             <Box sx={{ marginTop: '5px', marginBottom: '5px' }}>
               <Rating size="small" name="product-rating" value={4} readOnly={true} />
@@ -44,9 +44,9 @@ const ProductCard: React.FC<Props> = (props) => {
             <BuyNowButton to={'product/' + product.id} />
           </ButtonGroup>
         </Box>
-        <Box sx={{ textAlign: 'center' }}>
+        {/* <Box sx={{ textAlign: 'center' }}>
           <AddProductToServer product={product} />
-        </Box>
+        </Box> */}
       </Stack>
     </Paper>
   )

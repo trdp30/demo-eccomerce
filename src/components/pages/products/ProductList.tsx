@@ -1,26 +1,12 @@
 import { Box, Grid, Stack, Pagination } from '@mui/material'
-import React, { useMemo } from 'react'
-import { faker } from '@faker-js/faker'
+import React from 'react'
 import { useState } from 'react'
 import ProductCard from 'components/pages/products/ProductCard'
-import { useProductQuery, OrganizationProductType } from 'services/productApi'
+import { useProductQuery } from 'services/productApi'
 
 const ProductList: React.FC = () => {
   const [pageNumber, updatePageNumber] = useState<number>(1)
-  const { data } = useProductQuery(pageNumber)
-  const products: OrganizationProductType[] | [] = useMemo(
-    () =>
-      Array.isArray(data)
-        ? data.map(({ id, urls, image_url, ...rest }: OrganizationProductType) => ({
-            id: id,
-            image_url: urls?.small || image_url,
-            price: faker.commerce.price(),
-            mrp: faker.commerce.price(),
-            ...rest
-          }))
-        : [],
-    [data]
-  )
+  const { data = [] } = useProductQuery({ page: pageNumber })
 
   const handlePageNumberChange = (e: React.ChangeEvent<unknown>, page: number) =>
     updatePageNumber(() => page)
@@ -29,7 +15,7 @@ const ProductList: React.FC = () => {
     <Stack>
       <Box>
         <Grid container spacing={3}>
-          {products.map((product) => (
+          {data.map((product) => (
             <Grid item key={product.id} xs={12} sm={6} md={4}>
               <ProductCard product={product} />
             </Grid>

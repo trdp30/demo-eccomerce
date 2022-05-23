@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button, ButtonTypeMap } from '@mui/material'
-import { useCreateProductMutation, Product } from 'services/productApi'
+import { useCreateProductMutation } from 'services/productApi'
+import { Product } from 'type'
 
 export type AddProductToServerProps = {
   buttonProps?: ButtonTypeMap
@@ -14,9 +15,8 @@ const AddProductToServer: React.FC<AddProductToServerProps> = (props) => {
   const handleClick = async () => {
     toggleLoading(true)
     await createProduct({
-      name: product.name,
-      image_url: product.image_url,
-      image_id: product.id
+      name: product.title,
+      images: product.images
     })
     toggleLoading(false)
   }

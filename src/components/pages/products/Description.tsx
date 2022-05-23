@@ -2,12 +2,16 @@ import { Typography, Box } from '@mui/material'
 import React from 'react'
 import faker from '@faker-js/faker'
 
-const Description: React.FC = () => {
+type Props = {
+  description?: string
+}
+
+const Description: React.FC<Props> = ({ description }) => {
   return (
     <Box>
       <Typography variant="subtitle2">Description</Typography>
       <Box>
-        <Typography variant="caption">{faker.lorem.paragraph()}</Typography>
+        <Typography variant="caption">{description}</Typography>
       </Box>
     </Box>
   )

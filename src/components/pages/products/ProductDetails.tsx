@@ -7,32 +7,43 @@ import ProductDescriptionTab from 'components/pages/products/ProductDescriptionT
 import RelatedProductList from 'components/pages/products/RelatedProductList'
 import BuyNowButton from 'components/common/BuyNowButton'
 import AddToCartButton from 'components/common/AddToCartButton'
-import { OrganizationProductType } from 'services/productApi'
+import { Product } from 'type'
+import { useGetProductByIdQuery } from 'services/productApi'
+import { useParams } from 'react-router-dom'
 
 const ProductDetails: React.FC = () => {
-  const product: OrganizationProductType = useMemo(
-    () => ({
-      id: '1',
-      image_url: faker.image.business(340, 340, false),
-      price: faker.commerce.price(),
-      mrp: faker.commerce.price(),
-      name: faker.commerce.productName(),
-      rating: 4
-    }),
-    []
-  )
+  const { product_id } = useParams()
+  const {
+    data: product = {
+      id: Number(product_id),
+      images: [''],
+      price: 0,
+      mrp: 0,
+      title: '',
+      review_ratings: 0
+    },
+    isLoading
+  } = useGetProductByIdQuery(Number(product_id))
+  if (!product || isLoading) {
+    return <Typography>Loading...</Typography>
+  }
+
   return (
     <Container sx={{ paddingTop: '30px', paddingBottom: '30px' }}>
       <Stack spacing={4}>
         <Box>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6}>
-              <Stack spacing={2}>
-                <Box textAlign={'center'}>
-                  <Box component={'img'} src={product.image_url} />
+              <Stack spacing={2} sx={{ width: '100%', height: '100%' }}>
+                <Box textAlign={'center'} sx={{ width: '100%', height: 'calc(100% - 40px)' }}>
+                  <Box
+                    component={'img'}
+                    src={product.images[0]}
+                    sx={{ width: '100%', height: '100%' }}
+                  />
                 </Box>
-                <Box>
-                  <ProductImagesGroup />
+                <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+                  <ProductImagesGroup images={product.images} />
                 </Box>
               </Stack>
             </Grid>
@@ -40,15 +51,15 @@ const ProductDetails: React.FC = () => {
               <Stack spacing={3}>
                 <Box>
                   <Typography variant="h5" component={'h1'} fontWeight={700}>
-                    {product.name}
+                    {product?.title}
                   </Typography>
-                  <Typography variant="body1" fontWeight={400}>
+                  {/* <Typography variant="body1" fontWeight={400}>
                     Brand: <b>Samsung</b>
-                  </Typography>
+                  </Typography> */}
                   <Rating
                     size="small"
                     name="product-rating"
-                    value={product.rating}
+                    value={product?.review_ratings}
                     readOnly={true}
                   />
                 </Box>
@@ -57,9 +68,9 @@ const ProductDetails: React.FC = () => {
                 </Box>
                 <Box>
                   <Typography component={'h2'} color={'primary'} variant="h5" fontWeight={700}>
-                    Rs: {product.price}{' '}
+                    Rs: {product?.price}{' '}
                     <Typography sx={{ color: 'gray' }} component={'del'} variant="h5">
-                      {product.mrp}
+                      {product?.mrp}
                     </Typography>
                   </Typography>
                   <Typography variant={'caption'}>Stock Available</Typography>
@@ -75,7 +86,7 @@ const ProductDetails: React.FC = () => {
           </Grid>
         </Box>
         <Box>
-          <ProductDescriptionTab />
+          <ProductDescriptionTab product={product} />
         </Box>
         <Box>
           <RelatedProductList />

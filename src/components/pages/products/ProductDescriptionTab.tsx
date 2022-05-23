@@ -4,6 +4,7 @@ import Tab from '@mui/material/Tab'
 import Box from '@mui/material/Box'
 import Description from 'components/pages/products/Description'
 import ProductReview from 'components/pages/products/ProductReviews'
+import { Product } from 'type'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -34,8 +35,13 @@ function a11yProps(index: number) {
   }
 }
 
-export default function ProductDescriptionTab() {
+type Props = {
+  product: Product
+}
+
+export default function ProductDescriptionTab(props: Props) {
   const [value, setValue] = React.useState(0)
+  const { product } = props
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
@@ -50,7 +56,7 @@ export default function ProductDescriptionTab() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <Description />
+        <Description description={product.description} />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <ProductReview />
