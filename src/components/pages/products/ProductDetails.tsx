@@ -9,16 +9,24 @@ import AddToCartButton from 'components/common/AddToCartButton'
 import { useGetProductByIdQuery } from 'services/productApi'
 import { useParams } from 'react-router-dom'
 
+const productDefaultValues = {
+  images: [''],
+  price: 0,
+  mrp: 0,
+  title: '',
+  review_ratings: 0,
+  review_count: 0,
+  available: true,
+  description: '',
+  product_type: ''
+}
+
 const ProductDetails: React.FC = () => {
   const { product_id } = useParams()
   const {
     data: product = {
       id: Number(product_id),
-      images: [''],
-      price: 0,
-      mrp: 0,
-      title: '',
-      review_ratings: 0
+      ...productDefaultValues
     },
     isLoading
   } = useGetProductByIdQuery(Number(product_id))
