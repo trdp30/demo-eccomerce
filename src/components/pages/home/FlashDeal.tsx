@@ -75,7 +75,10 @@ const ItemCarousel: React.FC<ItemCarouselProps> = ({ products }) => {
 }
 
 const FlashDeal: React.FC = () => {
-  const { data = [] } = useProductQuery({ page: 2, per_page: 8 })
+  const { data = [], isLoading } = useProductQuery({ page: 2, per_page: 8 })
+  if (isLoading || !data) {
+    return <Typography>Loading...</Typography>
+  }
   return (
     <Stack spacing={3}>
       <Box>

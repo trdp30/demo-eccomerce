@@ -4,7 +4,12 @@ import { useProductQuery } from 'services/productApi'
 import ProductCard from 'components/pages/products/ProductCard'
 
 const TrendingItems: React.FC = () => {
-  const { data = [] } = useProductQuery({ page: 3, per_page: 8 })
+  const { data = [], isLoading } = useProductQuery({ page: 3, per_page: 8 })
+
+  if (isLoading || !data) {
+    return <Typography>Loading...</Typography>
+  }
+
   return (
     <Stack spacing={3}>
       <Box>

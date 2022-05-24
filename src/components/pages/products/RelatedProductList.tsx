@@ -4,7 +4,11 @@ import { Stack, Box, Typography, Grid } from '@mui/material'
 import { useProductQuery } from 'services/productApi'
 
 const RelatedProductList: React.FC = () => {
-  const { data = [] } = useProductQuery({ page: 1, per_page: 4 })
+  const { data = [], isLoading } = useProductQuery({ page: 1, per_page: 4 })
+
+  if (isLoading || !data) {
+    return <Typography>Loading...</Typography>
+  }
 
   return (
     <Stack spacing={3}>

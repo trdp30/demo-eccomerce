@@ -4,12 +4,12 @@ export interface Product {
   title: string
   price: number
   mrp: number
-  review_count?: number
-  available?: boolean
+  review_count: number
+  available: boolean
   images: Array<string>
-  description?: string
+  description: string
   review_ratings: number
-  product_type?: string
+  product_type: string
   [x: string]: any
 }
 
